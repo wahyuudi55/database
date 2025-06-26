@@ -13,8 +13,9 @@ if (!fs.existsSync(binFolder)) fs.mkdirSync(binFolder);
 app.get('/bin/:id', (req, res) => {
   const filePath = path.join(binFolder, `${req.params.id}.json`);
   if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'Not found' });
-  const data = fs.readFileSync(filePath);
-  res.json(JSON.parse(data));
+    const data = fs.readFileSync(filePath, 'utf-8'); // 🟢 Fix di sini
+    res.setHeader('Content-Type', 'application/json'); // optional
+    res.json(JSON.parse(data));
 });
 
 // CREATE bin
