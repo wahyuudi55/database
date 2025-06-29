@@ -9,7 +9,7 @@ app.use(cors()); // agar bisa diakses dari browser/quickedit/fetch
 app.use(express.json());
 
 // 🔐 API KEY CONFIG
-const VALID_API_KEY = 'apikey-whyuxD'; 
+const VALID_API_KEY = 'fuck-whyuxD'; 
 
 // Middleware validasi API key
 app.use((req, res, next) => {
